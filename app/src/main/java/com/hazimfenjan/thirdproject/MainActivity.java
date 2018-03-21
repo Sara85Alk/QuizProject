@@ -47,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
         int score = numberOfCorrectAnswers(hasAnswerQuestion1
                 , hasAnswerQuestion2, hasAnswerQuestion3,hasAnswerQuestion32
                 , hasAnswerQuestion4,hasAnswerQuestion42,hasAnswerQuestion43,hasAnswerQuestion5);
-        if (score == 40) {
+        if (score == 30) {
             Toast.makeText(this,  "Your score is " + score + " out of 30" + "\n Perfect", Toast.LENGTH_LONG).show();
         }
-        if ((score <= 35) && (score >= 25)) {
+        if ((score <= 25) && (score >= 20)) {
             Toast.makeText(this, "\n your score is " + score + " out of 30" + "\n excellent", Toast.LENGTH_LONG).show();
         }
-        if ((score <= 25) && (score >= 5)) {
+        if ((score <= 20) && (score >= 5)) {
             Toast.makeText(this, "\n your score is " + score + " out of 30" + "\n Well done", Toast.LENGTH_LONG).show();
         } else if (score <= 5) {
             Toast.makeText(this, "\n your score is " + score + " out of 30" + "\n Not bad", Toast.LENGTH_LONG).show();
