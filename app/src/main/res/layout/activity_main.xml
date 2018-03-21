@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hazimfenjan.thirdproject.MainActivity">
+    <!-- Parent Layout-->
+    <LinearLayout
+        style="@style/parent_layout">
+
+        <!-- First Child Layout Img+Text Header -->
+        <RelativeLayout
+            style="@style/header_layout">
+            <ImageView
+                style="@style/image"
+                android:src="@drawable/irq"
+                android:contentDescription="@string/image"/>
+            <TextView
+                style="@style/header_text"
+                android:text="@string/Mesopotamia" />
+        </RelativeLayout>
+
+        <!-- First Question -->
+        <LinearLayout
+            style="@style/question_block"
+            android:background="@android:color/holo_blue_dark">
+
+            <TextView
+                style="@style/questionStyle"
+                android:text="@string/q1" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupQ1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/question1_answer1"
+                    style="@style/radioAnswer"
+                    android:text="@string/q1_answer1" />
+                <RadioButton
+                    android:id="@+id/question1_answer2_correct"
+                    style="@style/radioAnswer"
+                    android:text="@string/q1_answer2" />
+                <RadioButton
+                    android:id="@+id/question1_answer3"
+                    style="@style/radioAnswer"
+                    android:text="@string/q1_answer3" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Second Question -->
+        <LinearLayout
+            style="@style/question_block"
+            android:background="#d8f0f0">
+
+            <TextView
+                style="@style/questionStyle"
+                android:text="@string/q2" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupQ2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/question2_answer1_correct"
+                    style="@style/radioAnswer"
+                    android:text="@string/q2_answer1" />
+                <RadioButton
+                    android:id="@+id/question2_answer2"
+                    style="@style/radioAnswer"
+                    android:text="@string/q2_answer2" />
+                <RadioButton
+                    android:id="@+id/question2_answer3"
+                    style="@style/radioAnswer"
+                    android:text="@string/q2_answer3" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Third Question  -->
+        <LinearLayout
+            style="@style/question_block"
+            android:background="@android:color/holo_blue_dark">
+
+            <TextView
+                style="@style/questionStyle"
+                android:text="@string/q3" />
+
+            <CheckBox
+                android:id="@+id/question3_answer1"
+                style="@style/radioAnswer"
+                android:text="@string/q3_answer1" />
+            <CheckBox
+                android:id="@+id/question3_answer2_correct"
+                style="@style/radioAnswer"
+                android:text="@string/q3_answer2" />
+            <CheckBox
+                android:id="@+id/question3_answer3_correct"
+                style="@style/radioAnswer"
+                android:text="@string/q3_answer3" />
+        </LinearLayout>
+
+        <!-- fourth Question -->
+        <LinearLayout
+            style="@style/question_block"
+            android:background="#d8f0f0">
+
+            <TextView
+                style="@style/questionStyle"
+                android:text="@string/q4" />
+
+            <CheckBox
+                android:id="@+id/question4_answer1_correct"
+                style="@style/radioAnswer"
+                android:text="@string/q4_answer1" />
+            <CheckBox
+                android:id="@+id/question4_answer2_correct"
+                style="@style/radioAnswer"
+                android:text="@string/q4_answer2" />
+            <CheckBox
+                android:id="@+id/question4_answer3_correct"
+                style="@style/radioAnswer"
+                android:text="@string/q4_answer3" />
+        </LinearLayout>
+
+        <!-- fifth Question -->
+        <LinearLayout
+            style="@style/question_block"
+            android:background="@android:color/holo_blue_dark">
+            <TextView
+                style="@style/questionStyle"
+                android:text="@string/q5" />
+            <EditText
+                android:id="@+id/country_iraq"
+                style="@style/edit_text"/>
+        </LinearLayout>
+
+        <!-- Score And Reset Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/scoreBtn"
+                style="@style/reset_score_button"
+                android:text="@string/score"
+                android:onClick="calcScore"/>
+
+            <Button
+                android:id="@+id/resetBtn"
+                style="@style/reset_score_button"
+                android:text="@string/reset"
+                android:onClick="reset"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

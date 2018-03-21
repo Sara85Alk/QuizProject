@@ -1,0 +1,98 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#ABC9D5</item>
+        <item name="colorPrimaryDark">#304848</item>
+        <item name="colorAccent">#304848</item>
+    </style>
+
+    <!-- Customize Question Block. -->
+    <style name="question_block">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:background">@drawable/custom</item>
+    </style>
+
+    <!-- Customize Question Style. -->
+    <style name="questionStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <!-- Customize Answer Style. -->
+    <style name="radioAnswer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <!-- Customize LinearLayout. -->
+    <style name="parent_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#ffffff</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Customize Header Layout. -->
+    <style name="header_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">450dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Customize Image View. -->
+    <style name="image">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <!-- Customize Header Text View. -->
+    <style name="header_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#304848</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- Customize Edit Text. -->
+    <style name="edit_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:hint">Iraq</item>
+        <item name="android:background">@drawable/custom</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <!-- Customize Reset Button Style. -->
+    <style name="reset_score_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#e7ca35</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:textColor">#501515</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+</resources>
