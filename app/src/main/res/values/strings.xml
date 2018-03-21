@@ -18,7 +18,7 @@
         <!-- End Question 2 -->
 
         <!-- Start Question 3 -->
-        <string name="q3">Q3) What is the first civilizations in the world?</string>
+        <string name="q3">Q3) What are the first civilizations in the world?</string>
         <string name="q3_answer1">Egyptian civilization in Egypt</string>
         <string name="q3_answer2">Sumerian civilization in Iraq</string>
         <string name="q3_answer3">Babel Civilization in Iraq</string>
