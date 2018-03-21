@@ -16,9 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    /**
-     * This method called when Score button clicked
-     */
+    /* This method called when Score button clicked */
 
     public void calcScore(View view) {
 
@@ -44,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         boolean hasAnswerQuestion43 = AnswerQ43.isChecked();
 
        EditText AnswerQ5 = findViewById(R.id.country_iraq);
-       String hasAnswerQuestion5 = AnswerQ5.getText().toString();
+       String hasAnswerQuestion5 = AnswerQ5.getText().toString().trim();
 
         int score = numberOfCorrectAnswers(hasAnswerQuestion1
                 , hasAnswerQuestion2, hasAnswerQuestion3,hasAnswerQuestion32
@@ -88,23 +86,20 @@ public class MainActivity extends AppCompatActivity {
         if (AnswerQuestion43) {
             numberOfCorrectAnswers += 5;
         }
-        if (hasAnswerQuestion5.equals("Iraq")) {
+        if(hasAnswerQuestion5.equalsIgnoreCase("Iraq")) {
             numberOfCorrectAnswers += 5;
         }
         return numberOfCorrectAnswers;
     }
     /**
      * This method resets all the Radio Buttons in a given Radio Group.
-     *
      * @param radioGroupID the id of a radio group
      */
     public void resetQuestions(int radioGroupID) {
         RadioGroup radioGroup = findViewById(radioGroupID);
         radioGroup.clearCheck();
     }
-    /**
-     * This method resets all the CheckBoxes in the quiz.
-     */
+    /* This method resets all the CheckBoxes in the quiz.*/
     public void resetCheckBoxes() {
         CheckBox checkbox1 = findViewById(R.id.question3_answer1);
         CheckBox checkbox2 = findViewById(R.id.question3_answer2_correct);
@@ -120,9 +115,7 @@ public class MainActivity extends AppCompatActivity {
         checkbox12.setChecked(false);
         checkbox13.setChecked(false);
     }
-    /**
-     * This method resets EditText in the quiz.
-     */
+    /* This method resets EditText in the quiz.*/
     public  void resetEditText() {
         EditText editText = findViewById(R.id.country_iraq);
         editText.getText().clear();
