@@ -10,43 +10,46 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    int score;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        RadioButton answerQ1 = findViewById(R.id.question1_answer2_correct);
+        boolean hasAnswerQuestion1 = answerQ1.isChecked();
+
+        RadioButton answerQ2 = findViewById(R.id.question2_answer1_correct);
+        boolean hasAnswerQuestion2 = answerQ2.isChecked();
+
+        CheckBox answerQ3 = findViewById(R.id.question3_answer3_correct);
+        boolean hasAnswerQuestion3 = answerQ3.isChecked();
+
+        CheckBox answerQ32 = findViewById(R.id.question3_answer2_correct);
+        boolean hasAnswerQuestion32 = answerQ32.isChecked();
+
+        CheckBox answerQ4 = findViewById(R.id.question4_answer1_correct);
+        boolean hasAnswerQuestion4 = answerQ4.isChecked();
+
+        CheckBox answerQ42 = findViewById(R.id.question4_answer2_correct);
+        boolean hasAnswerQuestion42 = answerQ42.isChecked();
+
+        CheckBox answerQ43 = findViewById(R.id.question4_answer3_correct);
+        boolean hasAnswerQuestion43 = answerQ43.isChecked();
+
+        EditText answerQ5 = findViewById(R.id.country_iraq);
+        String hasAnswerQuestion5 = answerQ5.getText().toString().trim();
+
+        score = numberOfCorrectAnswers(hasAnswerQuestion1
+                , hasAnswerQuestion2, hasAnswerQuestion3,hasAnswerQuestion32
+                , hasAnswerQuestion4,hasAnswerQuestion42,hasAnswerQuestion43,hasAnswerQuestion5);
     }
 
     /* This method called when Score button clicked */
 
     public void calcScore(View view) {
-
-        RadioButton AnswerQ1 = findViewById(R.id.question1_answer2_correct);
-        boolean hasAnswerQuestion1 = AnswerQ1.isChecked();
-
-        RadioButton AnswerQ2 = findViewById(R.id.question2_answer1_correct);
-        boolean hasAnswerQuestion2 = AnswerQ2.isChecked();
-
-        CheckBox AnswerQ3 = findViewById(R.id.question3_answer3_correct);
-        boolean hasAnswerQuestion3 = AnswerQ3.isChecked();
-
-        CheckBox AnswerQ32 = findViewById(R.id.question3_answer2_correct);
-        boolean hasAnswerQuestion32 = AnswerQ32.isChecked();
-
-        CheckBox AnswerQ4 = findViewById(R.id.question4_answer1_correct);
-        boolean hasAnswerQuestion4 = AnswerQ4.isChecked();
-
-        CheckBox AnswerQ42 = findViewById(R.id.question4_answer2_correct);
-        boolean hasAnswerQuestion42 = AnswerQ42.isChecked();
-
-        CheckBox AnswerQ43 = findViewById(R.id.question4_answer3_correct);
-        boolean hasAnswerQuestion43 = AnswerQ43.isChecked();
-
-       EditText AnswerQ5 = findViewById(R.id.country_iraq);
-       String hasAnswerQuestion5 = AnswerQ5.getText().toString().trim();
-
-        int score = numberOfCorrectAnswers(hasAnswerQuestion1
-                , hasAnswerQuestion2, hasAnswerQuestion3,hasAnswerQuestion32
-                , hasAnswerQuestion4,hasAnswerQuestion42,hasAnswerQuestion43,hasAnswerQuestion5);
         if (score == 30) {
             Toast.makeText(this,  "Your score is " + score + " out of 30" + "\n Perfect", Toast.LENGTH_LONG).show();
         }
@@ -77,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         if (AnswerQuestion31) {
             numberOfCorrectAnswers += 5;
         }
-        if (AnswerQuestion4 || AnswerQuestion42 || AnswerQuestion43 ) {
+        if (AnswerQuestion4 && AnswerQuestion43 && !AnswerQuestion42 ) {
             numberOfCorrectAnswers += 5;
         }
         if(hasAnswerQuestion5.equalsIgnoreCase("Iraq")) {
