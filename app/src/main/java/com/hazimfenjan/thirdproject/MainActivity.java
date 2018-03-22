@@ -11,13 +11,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int score;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+    }
+
+    /* This method called when Score button clicked */
+
+    public void calcScore(View view) {
         RadioButton answerQ1 = findViewById(R.id.question1_answer2_correct);
         boolean hasAnswerQuestion1 = answerQ1.isChecked();
 
@@ -42,14 +44,9 @@ public class MainActivity extends AppCompatActivity {
         EditText answerQ5 = findViewById(R.id.country_iraq);
         String hasAnswerQuestion5 = answerQ5.getText().toString().trim();
 
-        score = numberOfCorrectAnswers(hasAnswerQuestion1
+        int score = numberOfCorrectAnswers(hasAnswerQuestion1
                 , hasAnswerQuestion2, hasAnswerQuestion3,hasAnswerQuestion32
                 , hasAnswerQuestion4,hasAnswerQuestion42,hasAnswerQuestion43,hasAnswerQuestion5);
-    }
-
-    /* This method called when Score button clicked */
-
-    public void calcScore(View view) {
         if (score == 30) {
             Toast.makeText(this,  "Your score is " + score + " out of 30" + "\n Perfect", Toast.LENGTH_LONG).show();
         }
