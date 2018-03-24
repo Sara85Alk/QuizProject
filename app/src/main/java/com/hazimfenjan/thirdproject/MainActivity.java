@@ -10,46 +10,30 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    int score;
+    RadioButton answerQ1,answerQ2;
+    CheckBox answerQ3,answerQ32,answerQ33,answerQ4,answerQ42,answerQ43;
+    EditText answerQ5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        answerQ1 = findViewById(R.id.question1_answer2_correct);
+        answerQ2 = findViewById(R.id.question2_answer1_correct);
+        answerQ3 = findViewById(R.id.question3_answer1);
+        answerQ32 = findViewById(R.id.question3_answer2_correct);
+        answerQ33 = findViewById(R.id.question3_answer3_correct);
+        answerQ4 = findViewById(R.id.question4_answer1_correct);
+        answerQ42 = findViewById(R.id.question4_answer2_correct);
+        answerQ43 = findViewById(R.id.question4_answer3_correct);
+        answerQ5 = findViewById(R.id.country_iraq);
     }
 
     /* This method called when Score button clicked */
 
     public void calcScore(View view) {
-        RadioButton answerQ1 = findViewById(R.id.question1_answer2_correct);
-        boolean hasAnswerQuestion1 = answerQ1.isChecked();
-
-        RadioButton answerQ2 = findViewById(R.id.question2_answer1_correct);
-        boolean hasAnswerQuestion2 = answerQ2.isChecked();
-
-        CheckBox answerQ3 = findViewById(R.id.question3_answer1);
-        boolean hasAnswerQuestion3 = answerQ3.isChecked();
-
-        CheckBox answerQ32 = findViewById(R.id.question3_answer2_correct);
-        boolean hasAnswerQuestion32 = answerQ32.isChecked();
-
-        CheckBox answerQ33 = findViewById(R.id.question3_answer3_correct);
-        boolean hasAnswerQuestion33 = answerQ33.isChecked();
-
-        CheckBox answerQ4 = findViewById(R.id.question4_answer1_correct);
-        boolean hasAnswerQuestion4 = answerQ4.isChecked();
-
-        CheckBox answerQ42 = findViewById(R.id.question4_answer2_correct);
-        boolean hasAnswerQuestion42 = answerQ42.isChecked();
-
-        CheckBox answerQ43 = findViewById(R.id.question4_answer3_correct);
-        boolean hasAnswerQuestion43 = answerQ43.isChecked();
-
-        EditText answerQ5 = findViewById(R.id.country_iraq);
-        String hasAnswerQuestion5 = answerQ5.getText().toString().trim();
-
-        int score = numberOfCorrectAnswers(hasAnswerQuestion1
-                , hasAnswerQuestion2, hasAnswerQuestion3,hasAnswerQuestion32,hasAnswerQuestion33
-                , hasAnswerQuestion4,hasAnswerQuestion42,hasAnswerQuestion43,hasAnswerQuestion5);
+        score = numberOfCorrectAnswers();
         if (score == 35) {
             Toast.makeText(this,  "Your score is " + score + " out of 35" + "\n Perfect", Toast.LENGTH_LONG).show();
         }
@@ -62,22 +46,28 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "\n your score is " + score + " out of 35" + "\n Not bad", Toast.LENGTH_LONG).show();
         }
     }
-    public int numberOfCorrectAnswers(boolean AnswerQuestion1, boolean AnswerQuestion2, boolean AnswerQuestion3,
-                                      boolean AnswerQuestion32,boolean AnswerQuestion33, boolean AnswerQuestion4, boolean AnswerQuestion42,
-                                      boolean AnswerQuestion43, String hasAnswerQuestion5) {
-
+    public int numberOfCorrectAnswers() {
+        boolean hasAnswerQuestion1 = answerQ1.isChecked();
+        boolean hasAnswerQuestion2 = answerQ2.isChecked();
+        boolean hasAnswerQuestion3 = answerQ3.isChecked();
+        boolean hasAnswerQuestion32 = answerQ32.isChecked();
+        boolean hasAnswerQuestion33 = answerQ33.isChecked();
+        boolean hasAnswerQuestion4 = answerQ4.isChecked();
+        boolean hasAnswerQuestion42 = answerQ42.isChecked();
+        boolean hasAnswerQuestion43 = answerQ43.isChecked();
+        String hasAnswerQuestion5 = answerQ5.getText().toString().trim();
         int numberOfCorrectAnswers = 0;
 
-        if (AnswerQuestion1) {
+        if (hasAnswerQuestion1) {
             numberOfCorrectAnswers += 5;
         }
-        if (AnswerQuestion2) {
+        if (hasAnswerQuestion2) {
             numberOfCorrectAnswers += 5;
         }
-        if (AnswerQuestion32 && AnswerQuestion33 && !AnswerQuestion3 ) {
+        if (hasAnswerQuestion32 && hasAnswerQuestion33 && !hasAnswerQuestion3 ) {
             numberOfCorrectAnswers += 10;
         }
-        if (AnswerQuestion4 && AnswerQuestion43 && !AnswerQuestion42 ) {
+        if (hasAnswerQuestion4 && hasAnswerQuestion43 && !hasAnswerQuestion42 ) {
             numberOfCorrectAnswers += 10;
         }
         if(hasAnswerQuestion5.equalsIgnoreCase("Iraq")) {
