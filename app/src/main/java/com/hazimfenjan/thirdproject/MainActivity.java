@@ -50,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
         int score = numberOfCorrectAnswers(hasAnswerQuestion1
                 , hasAnswerQuestion2, hasAnswerQuestion3,hasAnswerQuestion32,hasAnswerQuestion33
                 , hasAnswerQuestion4,hasAnswerQuestion42,hasAnswerQuestion43,hasAnswerQuestion5);
-        if (score == 30) {
+        if (score == 35) {
             Toast.makeText(this,  "Your score is " + score + " out of 35" + "\n Perfect", Toast.LENGTH_LONG).show();
         }
-        if ((score <= 25) && (score >= 20)) {
+        if ((score <= 30) && (score >= 20)) {
             Toast.makeText(this, "\n your score is " + score + " out of 35" + "\n excellent", Toast.LENGTH_LONG).show();
         }
         if ((score <= 20) && (score >= 5)) {
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public int numberOfCorrectAnswers(boolean AnswerQuestion1, boolean AnswerQuestion2, boolean AnswerQuestion3,
-                                      boolean AnswerQuestion31,boolean AnswerQuestion33, boolean AnswerQuestion4, boolean AnswerQuestion42,
+                                      boolean AnswerQuestion32,boolean AnswerQuestion33, boolean AnswerQuestion4, boolean AnswerQuestion42,
                                       boolean AnswerQuestion43, String hasAnswerQuestion5) {
 
         int numberOfCorrectAnswers = 0;
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         if (AnswerQuestion2) {
             numberOfCorrectAnswers += 5;
         }
-        if (AnswerQuestion31 && AnswerQuestion33 && !AnswerQuestion3 ) {
+        if (AnswerQuestion32 && AnswerQuestion33 && !AnswerQuestion3 ) {
             numberOfCorrectAnswers += 10;
         }
         if (AnswerQuestion4 && AnswerQuestion43 && !AnswerQuestion42 ) {
